@@ -11,6 +11,12 @@ public class ModelT1000 implements Robot {
 	private Leg leg;
 	private Head head;
 
+	/*
+	*
+	* без этого конструктора bean, описаный в файле context.xml создан не будет, а будет ошибка
+	* java.lang.NoSuchMethodException: ru.javabegin.training.spring.impls.robot.ModelT1000.<init>()
+	at java.lang.Class.getConstructor0(Class.java:3082)
+	* */
 	public ModelT1000() {
 	}
 
@@ -21,14 +27,12 @@ public class ModelT1000 implements Robot {
 		this.head = head;
 	}
 
-	@Override
 	public void fire() {
 		head.calc();
 		hand.catchSomething();
 		leg.go();
 	}
 
-	@Override
 	public void dance() {
 		System.out.println("T1000 is dancing!");
 	}
