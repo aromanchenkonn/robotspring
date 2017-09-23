@@ -27,7 +27,7 @@ public class ModelT1000 implements Robot {
 		this.head = head;
 	}
 
-	public void fire() {
+	public void action() {
 		head.calc();
 		hand.catchSomething();
 		leg.go();
